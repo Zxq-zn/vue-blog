@@ -9,6 +9,7 @@
     </div>
 </template>
 <script>
+import bus from './Bus.js'   //bus组件传值
 export default {
     data(){
         return {
@@ -19,6 +20,7 @@ export default {
     methods:{
         getData(){
             this.$emit('changeData',this.childMsg)
+            bus.$emit('busEvent',this.childMsg)
         }
     }
 }
